@@ -38,7 +38,7 @@ class SloganTest < ActiveSupport::TestCase
   end
 
   test "content should not be too long" do
-    
+
   end
 
   test "content should not be too short" do
@@ -49,7 +49,7 @@ class SloganTest < ActiveSupport::TestCase
     # @slogan.save
     # @slogan2 = Slogan.new(content: "Run together and stay together")
     # assert_not @slogan2.save
-
+    
   end
 
 

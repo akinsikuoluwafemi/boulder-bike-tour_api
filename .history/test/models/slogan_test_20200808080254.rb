@@ -5,10 +5,6 @@ class SloganTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  def setup
-    @slogan = Slogan.new(content: "Run together and stay together")
-
-  end
 
   test "should not save slogan without first_name" do 
     @slogan = Slogan.new(last_name: "Last Name", email: "example@yahoo.com", content: "Write something here")
@@ -32,13 +28,13 @@ class SloganTest < ActiveSupport::TestCase
   end
 
   test "email should be unique" do
-    # @slogan.save
-    # @slogan2 = Slogan.new(email: "example@yahoo.com")
-    # assert_not @slogan2.valid?
+    @slogan = Slogan.new(first_name: "First Name", last_name: "Last Name", email: "example@yahoo.com", content: "Write something here")
+    @slogan.save
+    @slogan2 = 
   end
 
   test "content should not be too long" do
-    
+
   end
 
   test "content should not be too short" do
@@ -46,10 +42,7 @@ class SloganTest < ActiveSupport::TestCase
   end
 
   test "content should be unique" do
-    # @slogan.save
-    # @slogan2 = Slogan.new(content: "Run together and stay together")
-    # assert_not @slogan2.save
-
+    
   end
 
 
