@@ -6,7 +6,7 @@ class SloganTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @slogan = Slogan.new(email: "example@yahoo.com")
+    @slogan = Slogan.new(content: "Run together and stay together")
   end
 
   test "should not save slogan without first_name" do 

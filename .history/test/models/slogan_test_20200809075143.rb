@@ -6,33 +6,29 @@ class SloganTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @slogan = Slogan.new(email: "example@yahoo.com")
+    @slogan = Slogan.new(content: "Run together and stay together")
   end
 
   test "should not save slogan without first_name" do 
-    @slogan = Slogan.new(last_name: "Last Name", email: "example@yahoo.com", content: "Write something here")
-    assert_not(@slogan.save,["first name must be present"])
+    # @slogan = Slogan.new(last_name: "Last Name", email: "example@yahoo.com", content: "Write something here")
+    # assert_not(@slogan.save,["first name must be present"])
 
   end
 
   test "should not save slogan without last_name" do 
-    @slogan = Slogan.new(first_name: "First Name", email: "example@yahoo.com", content: "Write something here")
-    assert_not(@slogan.save, ["last name must be present"])
-
+    # @slogan = Slogan.new(first_name: "First Name", email: "example@yahoo.com", content: "Write something here")
+    # assert_not(@slogan.save, ["last name must be present"])
   end
 
 
   test "should not save slogan without an email" do 
     @slogan = Slogan.new(first_name: "First Name", last_name: "Last Name", content: "Write something here")
     assert_not(@slogan.save,["email must be present"])
-
   end
 
   test "should not save slogan without a content" do
     @slogan = Slogan.new(first_name: "First Name", last_name: "Last Name", email: "example@yahoo.com")
     assert_not(@slogan.save,["content must be present"])
-
-
   end
 
   test "email should be unique" do
@@ -42,10 +38,8 @@ class SloganTest < ActiveSupport::TestCase
   end
 
   test "content should not be too long" do
-    # @slogan.content = "a" * 51
-    # assert_not @slogan.valid?
-
-    
+    @slogan.content = "a" * 51
+    assert_not @slogan.valid?
   end
 
   test "content should not be too short" do

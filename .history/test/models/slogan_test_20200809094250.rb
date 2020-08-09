@@ -36,9 +36,9 @@ class SloganTest < ActiveSupport::TestCase
   end
 
   test "email should be unique" do
-    # @slogan.save
-    # @slogan2 = Slogan.new(email: "example@yahoo.com")
-    # assert_not @slogan2.valid?
+    @slogan.save
+    @slogan2 = Slogan.new(email: "example@yahoo.com")
+    assert_not @slogan2.valid?
   end
 
   test "content should not be too long" do
