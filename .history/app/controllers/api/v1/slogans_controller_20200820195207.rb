@@ -21,7 +21,7 @@ class Api::V1::SlogansController < ApplicationController
     if @slogan.save
       render json: @slogan, status: :created, location: api_v1_slogans_path(@slogan)
     else
-      render json: @slogan.errors, status: :unprocessable_entity 
+      render json: @slogan.errors, status: :unprocessable_entity
     end
   end
 

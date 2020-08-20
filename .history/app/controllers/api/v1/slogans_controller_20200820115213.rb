@@ -15,13 +15,12 @@ class Api::V1::SlogansController < ApplicationController
 
   # POST /slogans
   def create
-
     @slogan = Slogan.new(slogan_params)
-    
+
     if @slogan.save
-      render json: @slogan, status: :created, location: api_v1_slogans_path(@slogan)
+      render json: @slogan, status: :created, location: @slogan
     else
-      render json: @slogan.errors, status: :unprocessable_entity 
+      render json: @slogan.errors, status: :unprocessable_entity
     end
   end
 
@@ -47,6 +46,6 @@ class Api::V1::SlogansController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def slogan_params
-      params.require(:slogan).permit(:first_name,:last_name,:email,:content)
+      params.require(:slogan).permit(:first_name, :last_name, :email, :content)
     end
 end

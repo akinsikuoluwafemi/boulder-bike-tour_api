@@ -6,7 +6,7 @@ class Slogan < ApplicationRecord
                         uniqueness: { case_sensitive: false },
                         length: { maximum: 105 },
                         format: { with: VALID_EMAIL_REGEX }
-    validates :content, presence: true,
+    validates :content, presence: true
                         uniqueness: true,
-                        length: {minimum: 10, maximum: 50}
+                        length: {minimum: 10, maximum: 50},
 end
