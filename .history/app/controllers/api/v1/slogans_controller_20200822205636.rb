@@ -19,7 +19,7 @@ class Api::V1::SlogansController < ApplicationController
     @slogan = Slogan.new(slogan_params)
     
     if @slogan.save
-      render json: @slogan, status: :created, location: api_v1_slogans_path(@slogan)
+      # render json: @slogan, status: :created, location: api_v1_slogans_path(@slogan)
       # render json: @slogan, status: :created, location: @slogan
 
     else
